@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A precision stopwatch with lap recording — keyboard-friendly, offline-ready, zero dependencies." />
+  <title>Stopwatch — Prodigy Infotech · Task 02</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+  <main class="app" role="main">
+
+    <!-- ── App header ── -->
+    <div id="app-label" class="app-label" aria-hidden="true">
+      Stopwatch
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         UNIFIED CARD — timer + controls + laps
+         all inside one border/radius container
+         ═══════════════════════ ═══════════════════ -->
+    <div class="card">
+
+      <!-- Timer section -->
+      <section class="timer-section" aria-label="Timer display">
+        <div
+          id="timer-display"
+          class="timer-display"
+          role="timer"
+          aria-live="off"
+          aria-atomic="true"
+          aria-label="Elapsed time: 00:00:00.00"
+        >
+          00:00:00.<span class="timer-ms" aria-hidden="true">00</span>
+        </div>
+        <!-- Accent sweep line -->
+        <div id="accent-line" class="accent-line" aria-hidden="true"></div>
+      </section>
+
+      <!-- Controls section -->
+      <div class="controls-section">
+        <div class="controls" role="group" aria-label="Stopwatch controls">
+
+          <!-- Lap — left -->
+          <button
+            id="btn-lap"
+            class="btn btn-lap"
+            type="button"
+            disabled
+            aria-disabled="true"
+            aria-label="Record lap"
+            title="Record lap (L)"
+          >
+            Lap
+          </button>
+
+          <!-- Start / Pause — centre -->
+          <button
+            id="btn-start"
+            class="btn btn-start"
+            type="button"
+            aria-label="Start stopwatch"
+            title="Start / Pause (Space)"
+          >
+            Start
+          </button>
+
+          <!-- Reset — right -->
+          <button
+            id="btn-reset"
+            class="btn btn-reset"
+            type="button"
+            aria-label="Reset stopwatch"
+            title="Reset (R)"
+          >
+            Reset
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Lap section -->
+      <div class="lap-section" aria-label="Lap recordings">
+
+        <!-- Section header -->
+        <div class="lap-section-header">
+          <span class="lap-section-title">Laps</span>
+          <span id="lap-count" class="lap-count"></span>
+        </div>
+
+        <!-- Scrollable lap body -->
+        <div id="lap-body" class="lap-body">
+
+          <!-- Column headers -->
+          <div class="lap-col-header" aria-hidden="true">
+            <span>#</span>
+            <span>Split</span>
+            <span>Cumulative</span>
+          </div>
+
+          <!-- Empty state -->
+          <p id="lap-empty" class="lap-empty">No laps recorded yet</p>
+
+          <!-- Lap entries -->
+          <ol
+            id="lap-list"
+            class="lap-list"
+            aria-live="polite"
+            aria-relevant="additions"
+            aria-label="Lap list"
+            reversed
+          >
+            <!-- Populated by app.js -->
+          </ol>
+
+        </div><!-- /lap-body -->
+      </div><!-- /lap-section -->
+
+    </div><!-- /card -->
+
+    <!-- Keyboard hints -->
+    <div class="keyboard-hints" aria-label="Keyboard shortcuts">
+      <span class="hint"><kbd>Space</kbd> Start / Pause</span>
+      <span class="hint"><kbd>L</kbd> Lap</span>
+      <span class="hint"><kbd>R</kbd> Reset</span>
+    </div>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
