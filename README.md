@@ -64,7 +64,3 @@ This project demonstrates practical implementation of:
 - Responsive Web Design
 - Interactive User Interfaces
 - Frontend Application Development
-
-## Keywords
-
-`HTML5` `CSS3` `JavaScript` `Frontend Development` `Web Development` `Responsive Design` `Stopwatch` `Timer` `Time Tracking` `DOM Manipulation` `Event Handling` `Interactive UI` `Frontend Project` `GitHub Pages`
